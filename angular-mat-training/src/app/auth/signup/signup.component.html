@@ -1,0 +1,24 @@
+<section>
+  <form [formGroup]="signupForm" fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="submitForm(signupForm.value)">
+    <mat-form-field>
+      <input matInput type="email" placeholder="Your email" formControlName="email" id="email" email>
+      <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+      <mat-error *ngIf="hasError('email', 'email')">Must be valid email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Your password" formControlName="password">
+      <mat-hint>At least 6 characters long.</mat-hint>
+      <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+      <mat-error *ngIf="hasError('password', 'minlength')">Must be 6 or more characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" id="date" readonly (click)="picker.open()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="!signupForm.valid">Submit</button>
+  </form>
+</section>

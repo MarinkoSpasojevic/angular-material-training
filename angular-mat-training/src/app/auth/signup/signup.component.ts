@@ -16,7 +16,8 @@ export class SignupComponent implements OnInit {
     this.signupForm = new FormGroup({
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      date: new FormControl(new Date())
+      date: new FormControl(new Date()),
+      terms: new FormControl('', [Validators.required])
     });
   }
 
@@ -24,10 +25,17 @@ export class SignupComponent implements OnInit {
     return this.signupForm.controls[controlName].hasError(errorName);
   }
 
+  public checkChanged = (event) =>{
+    if(!event.checked){
+      this.signupForm.patchValue({'terms': ''});
+    }
+  } 
+
   public submitForm = (signupFormValue) =>{
     console.log(signupFormValue.email);
     console.log(signupFormValue.password);
     console.log(signupFormValue.date);
+    console.log(signupFormValue.terms);
   }
 
 }

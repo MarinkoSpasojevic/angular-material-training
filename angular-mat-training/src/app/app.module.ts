@@ -15,7 +15,7 @@ import { NewTrainingComponent } from './training/new-training/new-training.compo
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
-import { MAT_DATE_LOCALE } from '../../node_modules/@angular/material/core';
+// import { MAT_DATE_LOCALE } from '../../node_modules/@angular/material/core';
 
 @NgModule({
   declarations: [

@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
 import { MultimenuComponent } from './multimenu/multimenu.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { LayoutComponent } from './layout/layout.component';
 // import { MAT_DATE_LOCALE } from '../../node_modules/@angular/material/core';
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     WelcomeComponent,
     MultimenuComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ import { MultimenuComponent } from './multimenu/multimenu.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ConfirmationDialogComponent } from './shared/modals/confirmation-dialog/confirmation-dialog.component';
 // import { MAT_DATE_LOCALE } from '../../node_modules/@angular/material/core';
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LayoutComponent } from './layout/layout.component';
     MultimenuComponent,
     HeaderComponent,
     SidenavListComponent,
-    LayoutComponent
+    LayoutComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,9 @@ import { LayoutComponent } from './layout/layout.component';
   ],
   providers: [
     // {provide: MAT_DATE_LOCALE, useValue: 'en-GB'} to provide dd/MM/yyyy
+  ],
+  entryComponents: [ //this is for components which we are using nither with routing or with app-selector tag
+    ConfirmationDialogComponent
   ],
   bootstrap: [AppComponent]
 })

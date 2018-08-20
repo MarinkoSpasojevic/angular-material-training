@@ -1,3 +1,5 @@
+import { AuthData } from './../../_interfaces/aut-data.model';
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -10,7 +12,7 @@ export class SignupComponent implements OnInit {
 
   public signupForm: FormGroup;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -32,10 +34,12 @@ export class SignupComponent implements OnInit {
   } 
 
   public submitForm = (signupFormValue) =>{
-    console.log(signupFormValue.email);
-    console.log(signupFormValue.password);
-    console.log(signupFormValue.date);
-    console.log(signupFormValue.terms);
+    let userData: AuthData = {
+      email: signupFormValue.email,
+      password: signupFormValue.password
+    };
+
+    this.authService.registerUser(userData);
   }
 
 }

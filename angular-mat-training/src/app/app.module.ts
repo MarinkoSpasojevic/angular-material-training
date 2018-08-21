@@ -14,7 +14,7 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
 import { NewTrainingComponent } from './training/new-training/new-training.component';
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
 import { MultimenuComponent } from './multimenu/multimenu.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
@@ -44,7 +44,8 @@ import { ConfirmationDialogComponent } from './shared/modals/confirmation-dialog
     MaterialModule,
     RoutingModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     // {provide: MAT_DATE_LOCALE, useValue: 'en-GB'} to provide dd/MM/yyyy
